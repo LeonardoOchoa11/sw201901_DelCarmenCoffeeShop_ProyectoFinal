@@ -8,8 +8,12 @@ function coffeeInit(db){
     var mongoModel = require('./mongoModel')(db);
 
     var coffeeTp = {
-        'done':false
-    
+        'Articulo': '',
+        'Precio': '',
+        'Descripcion':'',
+        'fchPedido':'',
+        'done':false,
+        'fchFinal':''
     };
 
     router.get('/all', function (req, res, next) {
@@ -83,7 +87,7 @@ function coffeeInit(db){
         });
     }); // Delete Coffee by Id
 
-
+    return router;
 } // Final coffeeInit
 
 module.exports = coffeeInit;
