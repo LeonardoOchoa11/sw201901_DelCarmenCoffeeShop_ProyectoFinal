@@ -2,7 +2,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 function initDistBinModel(db) {
     var lib = {};
-    var dbColl = db.collection('BinaryTest');
+    var dbColl = db.collection('coffees');
     lib.getBinItems = (page = 1, amount = 20, handler)=>{
         var skipDocs = (page - 1) * amount;
         dbColl
