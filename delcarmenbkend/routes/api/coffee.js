@@ -21,12 +21,51 @@ function coffeeInit(db){
             function (err, docs) {
                 if (err) {
                     console.log(err);
-                    return res.status(500).json({error:"Algo paso con el cafe"});
+                    return res.status(500).json({error:"Algo paso con el cafe :("});
                 }
                 return res.status(200).json(docs);
             }
         );
     }); // Final getAllCoffee
+
+    router.get('/tags', (req, res, next)=>{
+        mongoModel.getTagsCounter((err, docs) =>{
+            if(err){
+                console.log(err);
+                return res.status(500).json({"error": "Algo paso con el tag del cafe :("});
+            }
+            return res.status(200).json(docs);
+        });
+
+    }); // Final del getTagsCounter
+    router.post('/new', function (req, res, next) {
+        var _CoffeeData = Object.assign({}, coffeeTp, req.body);
+        var dateT = new Date();
+        var dateD = new Date();
+        dateD.setDate(dateT.getDate() + 3);
+        _CoffeeData.fchPedido = dateT;
+        _CoffeeData.fchFinal = dateD;
+        mongoModel.addNewCoffee(_CoffeeData, (err, newCoffee) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).json({ "error": "No se puede agregar :(" });
+            } else {
+                return res.status(200).json(newCoffee);
+            }
+        });
+    }); //Add new coffee
+
+    router.put('/addtags/:id', (req, res, next) =>{
+        mongoModel.addTagsToCoffee((req.body.tags || '').split('|'), req.params.id, (err, rslt)=>{
+            if (err) {
+                console.log(err);
+                return res.status(500).json({"error":"No se pudo poner un tag en el cafe :("});
+            } else {
+                return res.status(200).json(rslt);
+            }
+        });// Final de addTagstoCoffe
+    }); //Final del Addtags
+
 
     router.get('/byid/:CoffeeId', (req, res, next)=>{
         mongoModel.getCoffeeById(req.params.CoffeeId, (err, CoffeeDoc)=>{
@@ -51,18 +90,7 @@ function coffeeInit(db){
         }); // Search by Tags
     }); //By tags
 
-    router.post('/new', function(req,res,next){
-        var _CoffeeData = Object.assign({}, coffeeTp, req.body);
-        mongoModel.addNewCoffee(_CoffeeData, (err, newCoffee)=>{
-            if (err) {
-                console.log(err);
-                return res.status(500).json({"error":"No se puede agregar :("});
-            } else {
-                return res.status(200).json(newCoffee);
-            }
-        });
-    }); //Add new coffee
-
+    
     router.put('/done/:CoffeeId', function (req, res, next) {
         var _CoffeeId = req.params.CoffeeId;
         mongoModel.toggleCoffeeDone(_CoffeeId, (err, rslt)=>{
