@@ -13,7 +13,8 @@ class Header extends Component {
 const headerstyle={
   textAlign: 'center',
   fontSize: '30px',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  fontFamily: 'Pacifico, cursive'
 }
 
 export default Header;

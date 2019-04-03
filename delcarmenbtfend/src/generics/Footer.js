@@ -16,6 +16,7 @@ const footerstyle={
     width: '100%',
     height: '50px',
     textAlign: 'center',
+    fontFamily :'Karla, sans-serif'
 }
 
 export default Footer;
