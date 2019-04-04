@@ -1,15 +1,5 @@
 import React, {Component} from 'react';
 
-/**
- *   inputLabel
- *   inputName
- *   inputType
- *   inputPlaceholder
- *   inputValue
- *   inputErrorMsg
- *   inputChangeHandler
- *   inputBlurHandler
- */
 
 class Input extends Component{
   render(){

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../../generics/header/Header';
-import Body from '../../generics/body/Body';
 import Input from '../../generics/input/Input';
+import axios from 'axios';
 
-/
 class Login extends Component {
   constructor(){
     super();
@@ -16,8 +14,6 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <Header title="Inicio de Sesión"></Header>
-        <Body>
           <Input
               inputLabel="Correo Electrónico"
               inputName="txtEmail"
@@ -36,7 +32,6 @@ class Login extends Component {
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
-        </Body>
       </div>
     );
   }

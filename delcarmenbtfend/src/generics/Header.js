@@ -9,6 +9,8 @@ class Header extends Component {
       <h1 style={headerstyle}>{this.props.title}</h1>
         <Link style={linkStyle} to="/">Home</Link> 
         <Link style={linkStyle} to="/about"> About</Link>
+        <Link style={linkStyle} to="/login">Login</Link> 
+        <Link style={linkStyle} to="/signin">Sign In</Link>
       </div>
     );
   }
@@ -29,7 +31,7 @@ const linkStyle = {
   color: '#fff',
   textDecoration: 'none',
   textAlign: 'center',
-  paddingLeft: '20px'
+  paddingLeft: '50px'
 }
 
 export default Header;
