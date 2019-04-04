@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch} from "react-router-dom";
-
+//import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 //import de componentes
 import Header from './generics/Header';
 import Footer from './generics/Footer';
-
+import About from './components/pages/About';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
       <div className="App">
         <Header className="pageheader"  title="Del Carmen Coffee Shop"/>
         <Footer />
+        <Route exact path="/" component={Footer} />
+        <Route path="/about" component={About} />
       </div>
-      </BrowserRouter> 
+      </Router> 
     );
   }
 }
