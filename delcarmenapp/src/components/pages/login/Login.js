@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from '../../generics/input/Input';
+import Input from '../../../generics/input/Input';
 import axios from 'axios';
 
 class Login extends Component {
@@ -18,7 +18,7 @@ class Login extends Component {
               inputLabel="Correo Electrónico"
               inputName="txtEmail"
               inputType="email"
-              inputPlaceholder="Correo Electróncio"
+              inputPlaceholder="Correo Electrónico"
               inputValue={this.state.txtEmail}
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
