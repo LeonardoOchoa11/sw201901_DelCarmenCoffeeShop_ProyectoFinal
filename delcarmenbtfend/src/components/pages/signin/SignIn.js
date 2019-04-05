@@ -5,7 +5,7 @@ class Signin extends Component{
   render(){
     return (
       <div>
-        <Header title="Crear Nueva Cuentas"></Header>
+        <h1>CREA TU CUENTA</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quidem odio animi! Laboriosam commodi, minus quia itaque non praesentium eum nulla expedita, facilis eligendi reiciendis necessitatibus accusamus asperiores libero voluptates?</p>
       </div>
     );

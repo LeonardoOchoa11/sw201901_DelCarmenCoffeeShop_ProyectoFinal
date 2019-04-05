@@ -11,12 +11,14 @@ class Footer extends Component {
 }
 
 const footerstyle={
-    position: 'absolute',
+    position: 'fixed',
     bottom: '0',
+    marginBottom: '0',
     width: '100%',
     height: '50px',
     textAlign: 'center',
-    fontFamily :'Karla, sans-serif'
+    fontFamily :'Karla, sans-serif',
+    background: 'rgba(0,0,0,0.7)'
 }
 
 export default Footer;
