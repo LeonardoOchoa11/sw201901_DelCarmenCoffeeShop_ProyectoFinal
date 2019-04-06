@@ -8,6 +8,7 @@ import Header from './generics/Header';
 import Footer from './generics/Footer';
 import Login from './components/pages/login/Login';
 import SignIn from './components/pages/signin/SignIn';
+import Products from './components/pages/products/Products';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
 
@@ -22,6 +23,7 @@ class App extends Component {
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
         <Route path="/signin" component={SignIn} />
+        <Route path="/products" component={Products} />
       </div>
       </Router> 
     );

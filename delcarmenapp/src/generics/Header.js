@@ -11,6 +11,7 @@ class Header extends Component {
         <a href="" className="text-white"><Link style={linkStyle} to="/about">About</Link></a>
         <a href="" className="text-white"><Link style={linkStyle} to="/login">Login</Link></a>
         <a href="" className="text-white"><Link style={linkStyle} to="/signin">Sign In</Link></a>
+        <a href="" className="text-white"><Link style={linkStyle} to="/products">Products</Link></a>
       </nav>
       <h1 style={headerstyle}>{this.props.title}</h1>
       </div>
