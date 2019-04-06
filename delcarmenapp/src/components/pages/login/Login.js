@@ -14,8 +14,10 @@ class Login extends Component {
   render() {
     return (
       <div>
-          <Input
-              inputLabel="Correo Electrónico"
+      <h1 style={hStyle}>INICIO DE SESION</h1>
+      <div style={fStyle} className="card container center-block">
+          <Input className="border p-3 formform-control"
+              inputLabel="Correo Electrónico: "
               inputName="txtEmail"
               inputType="email"
               inputPlaceholder="Correo Electrónico"
@@ -23,8 +25,8 @@ class Login extends Component {
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
-            <Input
-              inputLabel="Contraseña"
+            <Input className="form-control"
+              inputLabel="Contraseña:"
               inputName="txtPswd"
               inputType="password"
               inputPlaceholder="Contraseña"
@@ -32,6 +34,10 @@ class Login extends Component {
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
+            <button style={btnStyle} type="submit" className="btn btn-default btn-lg">
+              Ingresar
+            </button>
+      </div>
       </div>
     );
   }
@@ -41,4 +47,23 @@ class Login extends Component {
   }
 }
 
+const hStyle = {
+  color: '#fff',
+  textAlign: 'center',
+  paddingTop: '20px',
+  fontWeight: 'bold',
+  fontSize: '27px'
+}
+const fStyle = {
+  color: '#000',
+  textAlign: 'center',
+  paddingTop: '15px',
+  paddingBottom: '15px',
+  fontSize: '16px',
+  backgroung: '#4F311D'
+}
+const btnStyle = {
+  backgroungColor: '#4F311D',
+  fontSize: '14px',
+}
 export default Login;

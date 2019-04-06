@@ -6,11 +6,13 @@ class Header extends Component {
   render() {
     return (
       <div>
+      <nav className="navbar navbar-inverse">
+        <a href="" className="text-white"><Link style={linkStyle} to="/">Home</Link></a>
+        <a href="" className="text-white"><Link style={linkStyle} to="/about">About</Link></a>
+        <a href="" className="text-white"><Link style={linkStyle} to="/login">Login</Link></a>
+        <a href="" className="text-white"><Link style={linkStyle} to="/signin">Sign In</Link></a>
+      </nav>
       <h1 style={headerstyle}>{this.props.title}</h1>
-        <Link style={linkStyle} to="/">Home</Link> 
-        <Link style={linkStyle} to="/about"> About</Link>
-        <Link style={linkStyle} to="/login">Login</Link> 
-        <Link style={linkStyle} to="/signin">Sign In</Link>
       </div>
     );
   }
@@ -31,7 +33,6 @@ const linkStyle = {
   color: '#fff',
   textDecoration: 'none',
   textAlign: 'center',
-  paddingLeft: '50px'
 }
 
 export default Header;
