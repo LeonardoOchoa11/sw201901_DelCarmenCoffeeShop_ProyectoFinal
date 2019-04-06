@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './generics/Header';
 import Footer from './generics/Footer';
 import Login from './components/pages/login/Login';
+import SignIn from './components/pages/signin/SignIn';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
 
@@ -20,6 +21,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
+        <Route path="/signin" component={SignIn} />
       </div>
       </Router> 
     );

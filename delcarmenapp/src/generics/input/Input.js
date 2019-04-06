@@ -10,6 +10,7 @@ class Input extends Component{
     return (
     <fieldset>
       <label>{this.props.inputLabel || ''}</label>
+      <br/>
       <input
         type={this.props.inputType || 'text'}
         name={this.props.inputName || 'input' + Math.round(Math.random() * 100) }
@@ -18,7 +19,7 @@ class Input extends Component{
         onBlur={this.props.inputBlurHandler || ((e)=>{ return false;})}
         onChange={this.props.inputChangeHandler || ((e)=>{ return false;})}
       />
-
+      <br/>
       {error_cmp}
     </fieldset>
     );

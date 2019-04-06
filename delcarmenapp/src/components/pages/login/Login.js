@@ -10,6 +10,7 @@ class Login extends Component {
       "txtEmail":""
     }
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this);
   }
   render() {
     return (
@@ -34,7 +35,8 @@ class Login extends Component {
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
-            <button style={btnStyle} type="submit" className="btn btn-default btn-lg">
+            <br/>
+            <button onClick={this.onClickHandler} style={btnStyle} type="submit" className="btn btn-default btn-lg">
               Ingresar
             </button>
       </div>
@@ -44,6 +46,18 @@ class Login extends Component {
   onChangeHandler(e){
     const {name, value} = e.currentTarget; //ES5 desctructor de objectos ||destructuring
     this.setState({...this.state, [name]:value});
+  }
+  onClickHandler(e){
+    e.preventDefault();
+    e.stopPropagation();
+    //alert("Has Iniciado Sesion");
+    axios.post('/api/users/login',
+      {...this.state}
+    ).then( (resp) => {
+      alert(resp);
+    }).catch( (err) => {
+      alert(err);
+    });
   }
 }
 
