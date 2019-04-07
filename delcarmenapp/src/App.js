@@ -9,6 +9,7 @@ import Footer from './generics/Footer';
 import Login from './components/pages/login/Login';
 import SignIn from './components/pages/signin/SignIn';
 import Products from './components/pages/products/Products';
+import Detail from './components/pages/detail/Detail';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
 
@@ -24,6 +25,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signin" component={SignIn} />
         <Route path="/products" component={Products} />
+        <Route path="/detail:productid" component={Detail} />
       </div>
       </Router> 
     );

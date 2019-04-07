@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 //PROPS.NAME CAMBIAR NOMBRE VARIABLE
@@ -6,7 +7,10 @@ import axios from 'axios';
 function ListProduct(props){
     return(
       <div key={props._id}>
-        <b>{props.name}</b> 
+        <b>{props.Articulo}</b>
+        <b>
+        <Link to={`/detail/${props._id}`}>{props.Articulo}</Link>
+        </b>
       </div>
     );
   }

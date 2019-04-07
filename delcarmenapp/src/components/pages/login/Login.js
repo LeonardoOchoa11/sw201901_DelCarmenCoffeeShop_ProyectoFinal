@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Input from '../../../generics/input/Input';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 class Login extends Component {
   constructor(){
@@ -40,6 +42,7 @@ class Login extends Component {
               Ingresar
             </button>
       </div>
+      <a href="" className="text-white"><Link style={aStyle} to="/signin">¿No tienes cuenta aún? Crea tu Cuenta</Link></a>
       </div>
     );
   }
@@ -79,5 +82,10 @@ const fStyle = {
 const btnStyle = {
   backgroungColor: '#4F311D',
   fontSize: '14px',
+}
+const aStyle = {
+  paddingTop: '20px',
+  fontFamily :'Karla, sans-serif',
+  color: '#fff'
 }
 export default Login;
