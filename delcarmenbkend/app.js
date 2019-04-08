@@ -4,16 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
-var session = require('express- session');
-var MongoSessionStore = require('connect-mongodb-session')(session);
+var session = require('express-session');
+var MongoDBStore = require('connect-mongodb-session')(session);
 
 
 function appInit(db){
 
-  var sessionStore = new MongoSessionStore(
+  var app = express();
+  var sessionStore = new MongoDBStore(
     {
-      uri : 'mongodb://localhost:27017/obtsessionstore',
-      databaseName: 'obtsessionstore',
+      uri : 'mongodb://localhost:27017/delcarmendb',
+      databaseName: 'delcarmendb',
       collection: 'sesiones'
     },
     function(err){

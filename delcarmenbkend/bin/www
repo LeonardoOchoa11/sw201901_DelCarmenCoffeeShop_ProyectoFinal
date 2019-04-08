@@ -13,7 +13,7 @@ mongoClient.connect('mongodb://localhost:27017',{useNewUrlParser: true}, functio
     process.exit(1);
   }
   var db= conn.db("delcarmendb");
-  console.log("Conexion Exitosa");
+  console.log("Connection Established");
   var app = require('../app')(db);
   var debug = require('debug')('delcarmenbkend:server');
   var http = require('http');

@@ -58,6 +58,7 @@ function mongoModel(db){
             }
         }); //Insert one Coffee
     }// Final addNewCoffee
+    
     lib.addTagsToCoffee = (tags, id, handler) => {
         var curatedTags = Array.isArray(tags) ? tags : [tags];
         var updateObject = { "$set": { "tags": curatedTags } };
