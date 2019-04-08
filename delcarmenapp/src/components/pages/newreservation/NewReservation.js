@@ -88,7 +88,7 @@ class NewReservation extends Component{
           <option value="mercedes">Evento</option>
           <option value="audi">Salon de Eventos</option>
           </select>
-          <br/>
+          <br/><br/>
           <button onClick={this.onClickHandler} style={btnStyle} className="btn btn-default btn-lg">Agregar</button>
           <div>
             {this.state.error}
