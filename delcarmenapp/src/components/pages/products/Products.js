@@ -45,11 +45,13 @@ class Products extends Component{
     return (
       <div className="productlist">
         <h1 style={hStyle}>PRODUCTOS</h1>
-        <h2>Objeto Doc {this.state.coffee.length}</h2>
+        <h2>Inventario de Productos {this.state.coffee.length}</h2>
         <div>
         {ListProducts}
         </div>
-        { (this.state.isLoading)? "...Cargando": null }
+        { (this.state.isLoading)? "...Cargando, por favor espere...": null }
+        <br/><br/><br/>
+        <a href="" className="text-white"><Link style={aStyle} to="/reservation">¿Quieres tener todo preparado? Haz tu reservación</Link></a>
       </div>
     );
   }
@@ -61,4 +63,10 @@ const hStyle = {
   fontWeight: 'bold',
   fontSize: '27px'
 }
+const aStyle = {
+  paddingTop: '20px',
+  fontFamily :'Karla, sans-serif',
+  color: '#fff'
+}
+
 export default Products;
