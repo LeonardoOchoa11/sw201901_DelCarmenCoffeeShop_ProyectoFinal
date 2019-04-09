@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import Input from '../../../generics/input/Input';
+import axios from 'axios';
 
 class Signin extends Component{
   constructor(){
     super();
     this.state = {
-      "txtEmail":"",
-      "txtName":"",
-      "txtPswd":"",
-      "txtPswdConfirm":"",
+      "Correo":"",
+      "Usuario":"",
+      "Password":"",
+      "PasswordConfirm":"",
     }
     
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this);
 
   }
   render() {
@@ -21,37 +23,37 @@ class Signin extends Component{
       <div style={fStyle} className="card container center-block">
             <Input className="border p-3 formform-control"
               inputLabel="Correo Electrónico: "
-              inputName="txtEmail"
+              inputName="Correo"
               inputType="email"
               inputPlaceholder="Correo Electrónico"
-              inputValue={this.state.txtEmail}
+              inputValue={this.state.Correo}
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
             <Input className="form-control"
               inputLabel="Nombre de Usuario:"
-              inputName="txtName"
+              inputName="Usuario"
               inputType="text"
               inputPlaceholder="Nombre de Usuario"
-              inputValue={this.state.txtName}
+              inputValue={this.state.Usuario}
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
             <Input className="form-control"
               inputLabel="Contraseña:"
-              inputName="txtPswd"
+              inputName="Password"
               inputType="password"
               inputPlaceholder="Contraseña"
-              inputValue={this.state.txtPswd}
+              inputValue={this.state.Password}
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
             <Input className="form-control"
               inputLabel="Confirmar contraseña:"
-              inputName="txtPswdConfirm"
+              inputName="PasswordConfirm"
               inputType="password"
               inputPlaceholder="Contraseña"
-              inputValue={this.state.txtPswdConfirm}
+              inputValue={this.state.PasswordConfirm}
               inputErrorMsg=""
               inputChangeHandler={this.onChangeHandler}
             />
@@ -67,6 +69,20 @@ class Signin extends Component{
     const {name, value} = e.currentTarget; //ES5 desctructor de objectos ||destructuring
     this.setState({...this.state, [name]:value});
   }
+
+  onClickHandler(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    //alert("Has Creado una cuenta");
+    axios.post('/api/users/new',
+      { ...this.state }
+    ).then((resp) => {
+      alert(resp);
+    }).catch((err) => {
+      alert(err);
+    });
+  }
+
 }
 
 
