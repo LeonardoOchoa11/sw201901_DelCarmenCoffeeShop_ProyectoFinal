@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "59486224-aa45-4432-8f02-70e5cd3925d5",
+		"name": "ProyectoFinal",
+		"description": "Proyecto Final de Seminario de Software",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/coffee/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Articulo",
+							"value": "Mesa para 4",
+							"type": "text"
+						},
+						{
+							"key": "Precio",
+							"value": "L.20.00",
+							"type": "text"
+						},
+						{
+							"key": "Descripcion",
+							"value": "Mesa ideal para 3 amigos y tú.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"new"
+					]
+				},
+				"description": "Api que permite ingresar un nuevo articulo."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/coffee/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"all"
+					]
+				},
+				"description": "Api que permite visualizar todos los articulos."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/coffee/delete/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/delete/5ca180a921500f538068b565",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"delete",
+						"5ca180a921500f538068b565"
+					]
+				},
+				"description": "Api que permite la eliminacion de articulo"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/coffee/byid/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/byid/5ca1749c2898f81680ce0b49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"byid",
+						"5ca1749c2898f81680ce0b49"
+					]
+				},
+				"description": "Api que permite encontrar articulo por su ID"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/coffee/addtags/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tags",
+							"value": "Mesa 4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/addtags/5ca180ee21500f538068b567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"addtags",
+						"5ca180ee21500f538068b567"
+					]
+				},
+				"description": "Api que permite agregar tags a los articulos"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/coffee/bytags/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/bytags/Mesa 4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"bytags",
+						"Mesa 4"
+					]
+				},
+				"description": "Api que permite visualizar el articulo con el tag respectivo."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/coffee/done/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/coffee/done/5ca180ee21500f538068b567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"coffee",
+						"done",
+						"5ca180ee21500f538068b567"
+					]
+				},
+				"description": "Api que permite poner el estado de un articulo"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/distbin/gettest/1/20",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/distbin/gettest/1/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"distbin",
+						"gettest",
+						"1",
+						"20"
+					]
+				},
+				"description": "Api que permite visualizar cierta cantidad de articulos"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"all"
+					]
+				},
+				"description": "Shows all users, only for testing purposes."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/new/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Correo",
+							"value": "blacked@raw.com",
+							"type": "text"
+						},
+						{
+							"key": "Usuario",
+							"value": "Jason Luv",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "Jia/Lissa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/users/new/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"new",
+						""
+					]
+				},
+				"description": "Adds a new user."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reservations/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/reservations/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"reservations",
+						"all"
+					]
+				},
+				"description": "Show all reservations"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reservations/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Descripcion",
+							"value": "Mesa Personal",
+							"type": "text"
+						},
+						{
+							"key": "Tipo",
+							"value": "Evento",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/reservations/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"reservations",
+						"new"
+					]
+				},
+				"description": "Add new reservations"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/users/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
