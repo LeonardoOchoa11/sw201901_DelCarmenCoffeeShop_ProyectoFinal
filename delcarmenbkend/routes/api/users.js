@@ -43,10 +43,14 @@ function usersInit(db){
 
   router.post('/login', function (req, res, next) {
     var _userData = req.body;
+    var email = String;
+    var password = String;
+    _userData.email = email;
+    _userData.password = password;
     console.log(_userData);
     res.json({ "msg": "ok" });
-    if (req.body.email === "CORREOPORCAMBIAR@BLACKED.COM"
-      && req.body.password === "CONTRASEÑA") {
+    if (req.body.email === email
+      && req.body.password === password) {
       req.session.logged = true;
       req.session.loggeduser = req.body.email;
       res.status(200).json({ "msg": "ok" });
