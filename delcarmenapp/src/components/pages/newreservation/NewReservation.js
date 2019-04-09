@@ -8,12 +8,12 @@ class NewReservation extends Component{
   constructor(){
     super();
     this.state = {
-      txtDesc:"",
-      txtDescError:"",
-      txtAutor:"",
-      txtAutorError:"",
-      txtTipo:"",
-      txtTipoError:"",
+      Descripcion:"",
+      DescripcionError:"",
+      Fecha:"",
+      FechaError:"",
+      Tipo: "",
+      TipoError:"",
       redirectTo:"",
       error:""
     }
@@ -32,11 +32,11 @@ class NewReservation extends Component{
     e.preventDefault();
     e.stopPropagation();
     axios.post(
-        `api/coffee/new`,
+        `api/reservations/new`,
         {
-          Descripcion:this.state.txtDesc,
-          fchPedido:this.state.txtFch,
-          Articulo:this.state.value
+          Descripcion:this.state.Descripcion,
+          fchPedido:this.state.Fecha,
+          Tipo:this.state.Tipo
         }
       ).then(
         (resp)=>{
@@ -63,30 +63,30 @@ class NewReservation extends Component{
         <div style={fStyle} className="card container center-block">
           <Input
               inputLabel        ="Descripción"
-              inputName         ="txtDesc"
+              inputName         ="Descripcion"
               inputType         ="text"
               inputPlaceholder  ="Descripción de la Reservación"
-              inputValue        ={this.state.txtDesc||null}
-              inputErrorMsg     ={this.state.txtDescError||null}
+              inputValue        ={this.state.Descripcion||null}
+              inputErrorMsg     ={this.state.DescripcionError||null}
               inputChangeHandler={this.onChangeHandler}
               inputBlurHandler  ={this.onBlurHandler}
           />
           <Input
             inputLabel="Fecha"
-            inputName="txtFch"
-            inputType="date"
+            inputName="Fecha"
+            inputType="text"
             inputPlaceholder="Fecha de Reservación"
-            inputValue={this.state.txtAutor || null}
-            inputErrorMsg={this.state.txtAutorError || null}
+            inputValue={this.state.Fecha || null}
+            inputErrorMsg={this.state.FechaError || null}
             inputChangeHandler={this.onChangeHandler}
             inputBlurHandler={this.onBlurHandler}
           />
           <p style={pStyle}>Tipo de Reservación</p>
           <select>
-          <option value="volvo">Mesa Pareja</option>
-          <option value="saab">Mesa para 6</option>
-          <option value="mercedes">Evento</option>
-          <option value="audi">Salon de Eventos</option>
+            <option value={this.state.Tipo || null}>Mesa Pareja</option>
+            <option value={this.state.Tipo || null}>Mesa para 6</option>
+            <option value={this.state.Tipo || null}>Evento</option>
+            <option value={this.state.Tipo || null} >Salon de Eventos</option>
           </select>
           <br/><br/>
           <button onClick={this.onClickHandler} style={btnStyle} className="btn btn-default btn-lg">Agregar</button>
