@@ -27,6 +27,22 @@ function appInit(db){
     }
   );
 
+  var userSession = new MongoDBStore(
+    {
+      uri: 'mongodb://localhost:27017/delcarmendb',
+      databaseName: 'delcarmendb',
+      collection: 'users'
+    },
+    function (err) {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        console.log("User Session Initialized");
+      }
+    }
+  );
+
   var indexRouter = require('./routes/index');
   var apiRouter = require('./routes/api');
 

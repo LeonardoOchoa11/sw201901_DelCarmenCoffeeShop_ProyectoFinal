@@ -9,7 +9,7 @@ function coffeeInit(db){
 
     var coffeeTp = {
         'Articulo': '',
-        'Precio': '',
+        'Precio':'',
         'Descripcion':'',
         'fchPedido':'',
         'done':false,

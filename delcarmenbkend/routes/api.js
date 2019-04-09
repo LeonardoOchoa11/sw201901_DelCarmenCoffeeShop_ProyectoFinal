@@ -3,7 +3,7 @@ var router = express.Router();
 
 function apiInit(db){
 
-    var usersApi = require('./api/users');
+    var usersApi = require('./api/users')(db);
     var coffeeApi = require('./api/coffee')(db);
     var distBinApi = require('./api/distbin')(db);
 
