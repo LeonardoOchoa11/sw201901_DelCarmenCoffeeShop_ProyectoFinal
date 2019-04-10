@@ -48,9 +48,9 @@ function usersInit(db){
     _userData.email = email;
     _userData.password = password;
     console.log(_userData);
-    res.json({ "msg": "ok" });
-    if (req.body.email === email
-      && req.body.password === password) {
+   // res.json({ "msg": "ok" });
+    if (req.body.txtEmail === "fulanito"
+      && req.body.txtPswd === "detal") {
       req.session.logged = true;
       req.session.loggeduser = req.body.email;
       res.status(200).json({ "msg": "ok" });

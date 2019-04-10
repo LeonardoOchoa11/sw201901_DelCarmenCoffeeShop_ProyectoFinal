@@ -26,7 +26,7 @@ class Products extends Component{
       }
       componentDidMount(){ 
         this.setState({isLoading:true});
-        axios.get('/api/coffee')
+        axios.get('/api/coffee/all')
           .then( (resp)=>{
             this.setState({coffee:resp.data, isLoading:false});
           })
